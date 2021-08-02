@@ -1,4 +1,4 @@
-#Tri à bulle
+#Tri à bulle / Bubblesort
 #Complexité en temps: Au mieux O(n), En moyenne O(n²) Au pire O(n²)
 #complexité en espace : O(1)
 #Entrée : une liste A
