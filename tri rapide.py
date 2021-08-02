@@ -5,4 +5,4 @@
 #Sortie : A classée dans l'ordre croissant
 
 def trirapide(L):
-  
+	
