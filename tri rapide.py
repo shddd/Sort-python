@@ -3,34 +3,27 @@
 #complexité en espace : En moyenne O(log n), Au pire O(n)
 #Entrée : une liste A
 #Sortie : A classée dans l'ordre croissant
-  
-def partition(a, l, r): #dependant quickselect
-    x = a[r]
-    i = l - 1
-    for j in range(l, r):
-        if a[j] <= x:
-            i = i + 1
-            a[i], a[j] = a[j], a[i]
-    a[i + 1], a[r] = a[r], a[i + 1]
-    return i + 1
 
+import random
 
-def kthlargest(a, k): #quickselect
-    l = 0
-    r = len(a) - 1
-    split_point = partition(a, l, r) #choosing a pivot and saving its index
-    if split_point == r - k + 1: #if the choosen pivot is the correct elemnt, then return it
-        result = a[split_point]
-    elif split_point > r - k + 1: #if the element we are looking for is in the left part to the pivot then call 'kthlargest' on that part after modifing k
-        result = kthlargest(a[:split_point], k - (r - split_point + 1))
-    else: #if the element we are looking for is in the left part to the pivot then call 'kthlargest' on that part
-        result = kthlargest(a[split_point + 1:r + 1], k)
-    return result
+def quicksort(a):
+	if len(a)<=1: 
+	    return a 
 
-def quicksort(L): #tri rapide en lui-même
-	
+	smaller,equal,larger=[],[],[]
+	pivot=a[random.randint(0,len(a)-1)]
+
+	for x in a:
+		if x<pivot:
+		    smaller.append(x)
+		elif x==pivot:
+		    equal.append(x)
+		else:
+		    larger.append(x)
+
+	return quicksort(smaller)+equal+quicksort(larger)
 
 
 #just for testing
 a = [6, 4, 2, 1, 3, 5]
-print(kthlargest(a, 4))
+print(quicksort(a))
