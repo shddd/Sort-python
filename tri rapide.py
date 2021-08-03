@@ -28,12 +28,9 @@ def kthlargest(a, k): #quickselect
     return result
 
 def quicksort(L): #tri rapide en lui-même
-
+	
 
 
 #just for testing
 a = [6, 4, 2, 1, 3, 5]
 print(kthlargest(a, 4))
-
-def trirapide(L):
-	
