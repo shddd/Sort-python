@@ -6,6 +6,11 @@
 import random
 import math
 
+def heapsort(A):
+	
+
+
+
 def sort(A):
     maxdepth = floor(log(len(A)) * 2)
     return introsort(A, maxdepth)
